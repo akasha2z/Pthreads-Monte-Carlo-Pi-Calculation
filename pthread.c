@@ -109,6 +109,9 @@ int main(int argc, char *argv[])
       //printf("Return from thread %ld is : %f\n",t, *(float*)status);
       
       tot_in+=*(float*)status;            //keep track of the total in count
+      
+      //Free the memory created in thread
+      free((float*)status);
      
      }
      printf("Value for Pi is %f \n",1, 4*(tot_in/TOT_COUNT));
